@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "This plugin aims to avoid manipulation of specific modules during the Webpack (Terser) compilation process.",
   "main": "build/index.js",
+  "types": "build/index.d.ts",
   "scripts": {
     "build": "rm -rf build && tsc",
     "test": "echo \"Error: no test specified\" && exit 1"

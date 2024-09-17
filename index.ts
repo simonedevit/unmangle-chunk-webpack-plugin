@@ -4,9 +4,9 @@ type TerserOptions =  ConstructorParameters<typeof TerserPlugin>[0];
 type MinifyOptions = import("terser").MinifyOptions;
 
 type Chunk = {
-    name: string;
+    name?: string;
     modulesRegEx: RegExp;
-    minifyOptions: TerserOptions;
+    minifyOptions?: TerserOptions;
 };
 
 class UnmangleChunkWebpackPlugin {
@@ -14,7 +14,7 @@ class UnmangleChunkWebpackPlugin {
     private chunk: Chunk;
     private otherMinifyOptions: Array<TerserOptions>;
 
-    constructor(chunk: Chunk, otherMinifyOptions: Array<TerserOptions>) {
+    constructor(chunk: Chunk, otherMinifyOptions?: Array<TerserOptions>) {
         const { name, modulesRegEx, minifyOptions } = chunk;
         this.chunk = {
             name: name || 'unnamed-unmangled-chunk',
