@@ -33,8 +33,8 @@ const config = (): Configuration => {
         plugins: [
             // ...other plugins,
             new UnmangleChunkWebpackPlugin({
-                name: 'some-library-unmangled',
-                modulesRegEx: /node_modules\/some-library/
+                modulesRegEx: /node_modules\/some-library/,
+                name: 'some-library-unmangled'
             }),
         ],
     };
@@ -46,9 +46,9 @@ export default config;
 ## Parameters
 - <b>chunk</b> (required): An object defining the chunk to be isolated and customized. It contains the following properties:
 
-    - <b>name</b>: A string representing the name of the chunk.
-    - <b>modulesRegEx</b>: A regular expression to identify the modules belonging to the chunk.
-    - <b>minifyOptions</b>: Custom minification options for the isolated chunk, passed to TerserPlugin.
+    - <b>modulesRegEx</b> (required): A regular expression to identify the modules belonging to the chunk.
+    - <b>name</b> (optional): A string representing the name of the chunk.
+    - <b>minifyOptions</b> (optional): Custom minification options for the isolated chunk, passed to TerserPlugin.
 - <b>otherMinifyOptions</b> (optional): An array of additional minification options to be applied to other chunks in the bundle. These options are also passed to TerserPlugin.
 
 ## License

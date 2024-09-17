@@ -2,12 +2,12 @@
     "compilerOptions": {
         "outDir": "build",
         "target": "es6",
-        "module": "esnext",
+        "module": "commonjs",
         "moduleResolution": "node",
         "allowJs": false,
         "skipLibCheck": true,
         "esModuleInterop": true,
         "declaration": true
     },
-    "include": ["./index.ts"]
+    "include": ["index.ts"]
 }

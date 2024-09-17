@@ -1,6 +1,6 @@
 {
   "name": "unmangle-chunk-webpack-plugin",
-  "version": "1.0.0",
+  "version": "1.0.6",
   "description": "This plugin aims to avoid manipulation of specific modules during the Webpack (Terser) compilation process.",
   "main": "build/index.js",
   "types": "build/index.d.ts",

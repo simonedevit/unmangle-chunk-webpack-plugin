@@ -1,11 +1,12 @@
-import TerserPlugin, { Compiler } from 'terser-webpack-plugin';
+import TerserPlugin from 'terser-webpack-plugin';
+import { Compiler } from 'webpack';
 
 type TerserOptions =  ConstructorParameters<typeof TerserPlugin>[0];
 type MinifyOptions = import("terser").MinifyOptions;
 
 type Chunk = {
-    name?: string;
     modulesRegEx: RegExp;
+    name?: string;
     minifyOptions?: TerserOptions;
 };
 
