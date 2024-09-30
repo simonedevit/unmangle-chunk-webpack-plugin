@@ -48,12 +48,13 @@ class UnmangleChunkWebpackPlugin {
             compiler.options.optimization.minimizer = [
 
                 // minify all but current chunk
+                // check for containing and not strict equal because some frameworks (Next.js) automatically appends hash value at the end of chunk
                 new TerserPlugin({
-                    test: new RegExp(`^(?!.*${this.chunk.name}\\.js$).*.js$`)
+                    test: new RegExp(`^(?!.*${this.chunk.name}.*)\\.js$`)
                 }),
                 // minify current chunk but no mangle it
                 new TerserPlugin<MinifyOptions>(this.chunk.minifyOptions || { 
-                    test: `${this.chunk.name}.js`,
+                    test: new RegExp(`${this.chunk.name}.*\.js$`),
                     terserOptions: {
                         mangle: false
                     },
